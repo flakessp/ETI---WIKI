@@ -4,7 +4,7 @@
 
 <body>
   <header>
-      <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="\">
@@ -15,17 +15,18 @@
     </nav>
   </header>
   <div class="container">
-    {{#each posts}}
-      {{>postPage}}
-    {{/each}}
+
+      {{> postList}}
 
   </div>
-
 </body>
 
 <template name="postList">
-
+  {{#each post}}
+  <a href="#"> <h3>{{heading}}</h3></a>
+  {{/each}}
 </template>
-<template name="postPage">
 
+
+<template name="postPage">
 </template>
