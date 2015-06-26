@@ -23,7 +23,7 @@
 
 <template name="postList">
   {{#each post}}
-  <a href="#"> <h3>{{heading}}</h3></a>
+  <a href="{{pathFor 'postPage'}}"> <h3>{{heading}}</h3></a>
   {{/each}}
 </template>
 
