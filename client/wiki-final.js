@@ -4,6 +4,11 @@ if (Meteor.isClient) {
       return Posts.find();
     }
   });
+  Template.postPage.helpers({
+    'post': function(){
+      return Posts.find();
+    }
+  });
 
 }
 if (Meteor.isServer) {
