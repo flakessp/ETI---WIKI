@@ -2,6 +2,9 @@
   <h2>{{title}}</h2>
   <div class="row">
     <div class="col-md-8">
-    <p>{{{text}}}</p></div>
+      <p class="lead">{{{text}}}</p>
+      <h6> <small>submitted by {{author}}</small></h6>
+      <a href="{{pathFor 'postEdit'}}" class="btn btn-default">Edit</a>
+    </div>
   </div>
 </template>
