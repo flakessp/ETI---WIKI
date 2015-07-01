@@ -2,7 +2,7 @@ Meteor.subscribe("posts");
 
 Template.postList.helpers({
   'post': function() {
-    return Posts.find();
+    return Posts.find({}, {sort:{submitted: -1}});
   }
 });
 Template.postPage.helpers({
@@ -23,7 +23,7 @@ Template.postSubmit.events({
         return alert(error.reason);
       if(result.postExists)
         alert('This post has already been posted');
-        
+
       Router.go('postPage',{_id:result._id});
     });
   }
