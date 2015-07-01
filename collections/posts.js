@@ -1,6 +1,18 @@
 Posts = new Meteor.Collection('posts');
 
-// NOTE: adding post to DB (this is happening on server)
+Posts.allow({
+  insert: function(){
+    return true;
+  },
+  update: function(){
+    return true;
+  },
+  remove: function(){
+    return true;
+  }
+});
+
+// NOTE: adding meteor metod to add post to DB (this is happening on server)
 Meteor.methods({
   postInsert: function(postAttributes) {
     check(Meteor.userId(), String);
