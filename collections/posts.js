@@ -11,6 +11,12 @@ Posts.allow({
     return true;
   }
 });
+Posts.deny({
+  update: function(userId, post, fieldNames) {
+    // разрешаем редактировать только следующие два поля:
+    return (_.without(fieldNames, 'title', 'text').length > 0);
+  }
+});
 
 // NOTE: adding meteor metod to add post to DB (this is happening on server)
 Meteor.methods({
