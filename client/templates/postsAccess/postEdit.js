@@ -6,7 +6,7 @@ Template.postEdit.events({
 
     var postProperties = {
       title: $(e.target).find('[name=title]').val(),
-      text: $(e.target).find('[name=text]').val()
+      text: $(e.target).find('.epicarea').val()
     }
 
     Posts.update(currentPostId, {$set: postProperties}, function(error) {
