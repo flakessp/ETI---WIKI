@@ -5,7 +5,7 @@
       <p class="lead">
         {{#markdown}}{{text}}{{/markdown}}</p>
       <h6> <small>submitted by {{author}}</small></h6>
-      <a href="{{pathFor 'postEdit'}}" class="btn btn-default">Edit</a>
+      {{#if currentUser}}<a href="{{pathFor 'postEdit'}}" class="btn btn-default">Edit</a>{{/if}}
     </div>
   </div>
 </template>
