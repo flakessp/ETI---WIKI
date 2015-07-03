@@ -8,7 +8,8 @@ Template.postEdit.events({
       title: $(e.target).find('[name=title]').val(),
       text: $(e.target).find('.epicarea').val()
     }
-
+    
+    // checking if no changes were made
     if (this.text === postProperties.text && this.title==postProperties.title)
       alert("no changes were made")
     else {
