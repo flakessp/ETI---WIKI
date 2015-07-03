@@ -9,12 +9,15 @@ Template.postEdit.events({
       text: $(e.target).find('.epicarea').val()
     }
 
-    Meteor.call('postUpdate',postProperties,currentPostId,function(error, result){
-      if(error)
-        return alert(error.reason);
-      Router.go('postPage',{_id:currentPostId});
-    });
-
+    if (this.text === postProperties.text && this.title==postProperties.title)
+      alert("no changes were made")
+    else {
+      Meteor.call('postUpdate',postProperties,currentPostId,function(error, result){
+        if(error)
+          return alert(error.reason);
+        Router.go('postPage',{_id:currentPostId});
+      });
+    }
 
   },
 
