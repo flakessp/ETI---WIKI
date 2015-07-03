@@ -9,19 +9,17 @@ Template.postEdit.events({
       text: $(e.target).find('.epicarea').val()
     }
 
-    Posts.update(currentPostId, {$set: postProperties}, function(error) {
-      if (error) {
-        // display the error to the user
-        alert(error.reason);
-      } else {
-        Router.go('postPage', {_id: currentPostId});
-      }
+    Meteor.call('postUpdate',postProperties,currentPostId,function(error, result){
+      if(error)
+        return alert(error.reason);
+      Router.go('postPage',{_id:currentPostId});
     });
+
+
   },
 
   'click .delete': function(e) {
     e.preventDefault();
-
     if (confirm("Delete this post?")) {
       var currentPostId = this._id;
       Posts.remove(currentPostId);

@@ -20,6 +20,23 @@ Posts.deny({
 
 // NOTE: adding meteor metod to add post to DB (this is happening on server)
 Meteor.methods({
+  postUpdate:function(postProperties,currentPostId){
+    check(Meteor.userId(), String);
+    check(postProperties, {
+      title: String,
+      text: String
+    });
+    check(currentPostId, String);
+
+    console.log(currentPostId, postProperties);
+    var postId = Posts.update(currentPostId, {$set: postProperties});
+
+    return {
+      _id: postId
+    };
+  }
+});
+Meteor.methods({
   postInsert: function(postAttributes) {
     check(Meteor.userId(), String);
     check(postAttributes, {
