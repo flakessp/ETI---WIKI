@@ -3,7 +3,7 @@ Template.postSubmit.events({
     e.preventDefault();
     var post = {
       title: $(e.target).find('[name=title]').val(),
-      text: $(e.target).find('#epicarea1').val()
+      text: $(e.target).find('.epicarea').val()
     };
 
     Meteor.call("postInsert", post, function(error, result){
