@@ -9,8 +9,13 @@
       </tr>
     </thead>
     <tbody>
-      {{#each postInHistory}}
-        {{> postInHistory}}
+      {{#each history}}
+        <tr>
+          <th scope="row">{{title}}</th>
+          <td>{{submitted}}</td>
+          <td>{{author}}</td>
+          <td><a href="{{pathFor 'postInHistory'}}">{{comment}}</a></td>
+        </tr>
       {{/each}}
     </tbody>
   </table>

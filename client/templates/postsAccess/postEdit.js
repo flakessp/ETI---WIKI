@@ -8,14 +8,22 @@ Template.postEdit.events({
       title: $(e.target).find('[name=title]').val(),
       text: $(e.target).find('.epicarea').val()
     }
-    
+    var historyProperties = {
+      title: $(e.target).find('[name=title]').val(),
+      text: $(e.target).find('.epicarea').val(),
+      comment: $(e.target).find('[name=comment]').val()
+    }
+
     // checking if no changes were made
     if (this.text === postProperties.text && this.title==postProperties.title)
-      alert("no changes were made")
+      alert("no changes were made");
+    else if(historyProperties.comment === "")
+      alert("PLease leave the comment!");
     else {
       Meteor.call('postUpdate',postProperties,currentPostId,function(error, result){
         if(error)
           return alert(error.reason);
+        Meteor.call('historyInsert',historyProperties);
         Router.go('postPage',{_id:currentPostId});
       });
     }

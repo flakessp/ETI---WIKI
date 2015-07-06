@@ -1,8 +1,10 @@
 <template name="postInHistory">
+
   <tr>
     <th scope="row">{{title}}</th>
-    <td>{{date}}</td>
+    <td>{{submitted}}</td>
     <td>{{author}}</td>
-    <td>{{comment}}</td>
+    <td><a href="{{pathFor 'postInHistory'}}">{{comment}}</a></td>
   </tr>
+
 </template>

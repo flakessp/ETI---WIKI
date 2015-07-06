@@ -1,5 +1,5 @@
 Template.historyList.helpers({
-  'post': function() {
+  'history': function() {
     return History.find();
   }
 });

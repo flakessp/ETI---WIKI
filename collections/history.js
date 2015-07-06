@@ -10,3 +10,22 @@ History.allow({
     return true;
   }
 });
+Meteor.methods({
+  historyInsert: function(postAttributes) {
+    check(Meteor.userId(), String);
+
+    check(postAttributes, {
+      title: String,
+      text: String,
+      comment: String
+    });
+
+    var user = Meteor.user();
+    var post = _.extend(postAttributes, {
+      userId: user._id,
+      author: user.profile.name,
+      submitted: new Date()
+    });
+    History.insert(post);
+  }
+});
