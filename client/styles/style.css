@@ -1,7 +1,15 @@
 .header-background{
   background: #10061b;
   min-height: 100px;
+  display: block;
 }
 .container-fluid{
   padding: 0;
+}
+.navbar a{
+  color: #adadad;
+  text-transform: uppercase;
+}
+.navbar a:hover{
+  color: #00cae5;
 }

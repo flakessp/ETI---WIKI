@@ -11,7 +11,8 @@ Template.postEdit.events({
     var historyProperties = {
       title: $(e.target).find('[name=title]').val(),
       text: $(e.target).find('.epicarea').val(),
-      comment: $(e.target).find('[name=comment]').val()
+      comment: $(e.target).find('[name=comment]').val(),
+      id: currentPostId
     }
 
     // checking if no changes were made

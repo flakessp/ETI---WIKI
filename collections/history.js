@@ -17,7 +17,8 @@ Meteor.methods({
     check(postAttributes, {
       title: String,
       text: String,
-      comment: String
+      comment: String,
+      id: String
     });
 
     var user = Meteor.user();
