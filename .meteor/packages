@@ -14,3 +14,5 @@ audit-argument-checks
 underscore
 showdown
 d4nyll:epic
+cfs:standard-packages
+cfs:filesystem
