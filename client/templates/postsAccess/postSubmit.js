@@ -14,14 +14,5 @@ Template.postSubmit.events({
 
       Router.go('postPage',{_id:result._id});
     });
-  },
-  'change .fileInput': function (event,template){
-    FS.Utility.eachFile(event,function(file){
-      var fileObj = new FS.File(file);
-      console.log(fileObj);
-      Uploads.insert(fileObj,function(err){
-        console.log(err);
-      })
-    })
   }
 });
