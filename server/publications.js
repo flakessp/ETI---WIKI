@@ -4,3 +4,6 @@ Meteor.publish("posts", function(){
 Meteor.publish("history", function(){
   return History.find();
 });
+Meteor.publish("uploads", function(){
+  return Uploads.find();
+});
