@@ -8,4 +8,22 @@
       {{#if currentUser}}<a href="{{pathFor 'postEdit'}}" class="btn btn-default">Edit</a>{{/if}}
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-hover table-striped table-bordered">
+        <thead>
+          <th>Name</th>
+          <th>Download</th>
+        </thead>
+        <tbody>
+          {{#each uploads}}
+          <tr>
+            <td>{{name}}</td>
+            <td><a href="{{url download=true}}" class="btn btn-primary">Download</a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
 </template>
