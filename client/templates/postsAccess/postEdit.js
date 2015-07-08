@@ -3,7 +3,7 @@ Template.postEdit.events({
     e.preventDefault();
 
     var currentPostId = this._id;
-
+    console.log(currentPostId);
     var postProperties = {
       title: $(e.target).find('[name=title]').val(),
       text: $(e.target).find('.epicarea').val()

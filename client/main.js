@@ -17,10 +17,12 @@ Template.postPage.helpers({
 
 Template.postPage.events({
   'change .fileInput': function (event,template){
+
+    var currentPostId = this._id;
     FS.Utility.eachFile(event,function(file){
       var fileObj = new FS.File(file);
-      fileObj.post = this._id;
-      console.log(fileObj);
+      fileObj.metadata = {postId:currentPostId};
+      console.log(currentPostId);
       Uploads.insert(fileObj,function(err){
         console.log(err);
       })
