@@ -13,7 +13,7 @@ Template.postPage.helpers({
   // NOTE: todo - return files only with data - postId : this._id
   // to read - http://habrahabr.ru/post/248875/
   'uploads': function(){
-    return Uploads.find({}, {});
+    return Uploads.find({"metadata":{"postId":this._id}});
   }
 });
 
