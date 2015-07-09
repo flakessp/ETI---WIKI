@@ -2,17 +2,19 @@ Template.postEdit.events({
   'submit form': function(e) {
     e.preventDefault();
     var currentPostId = this._id;
+    var text = $(e.target).find('.epicarea').val();
+    var diff = htmldiff(this.text, text);
     var postProperties = {
       title: $(e.target).find('[name=title]').val(),
-      text: $(e.target).find('.epicarea').val()
+      text: text
     }
     var historyProperties = {
       title: $(e.target).find('[name=title]').val(),
-      text: $(e.target).find('.epicarea').val(),
+      text: text,
       comment: $(e.target).find('[name=comment]').val(),
-      postId: currentPostId
+      postId: currentPostId,
+      diff: diff
     }
-
     // checking if no changes were made
     if (this.text === postProperties.text && this.title==postProperties.title)
       alert("no changes were made");

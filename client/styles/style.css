@@ -17,3 +17,13 @@
   padding-left: 0;
   padding-right: 0;
 }
+del{
+  background-color: rgb(250, 218, 215);
+  color: rgb(179, 0, 0);
+  text-decoration: none;
+}
+ins{
+  background-color: rgb(234, 242, 194);
+  color: rgb(64, 102, 25);
+  text-decoration: none;
+}

@@ -18,7 +18,8 @@ Meteor.methods({
       title: String,
       text: String,
       comment: String,
-      postId: String
+      postId: String,
+      diff: String
     });
 
     var user = Meteor.user();
