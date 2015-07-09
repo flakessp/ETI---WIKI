@@ -1,10 +1,11 @@
 <template name="postInHistory">
-
-  <tr>
-    <th scope="row">{{title}}</th>
-    <td>{{submitted}}</td>
-    <td>{{author}}</td>
-    <td><a href="{{pathFor 'postInHistory'}}">{{comment}}</a></td>
-  </tr>
-
+  <div class="container">
+    <div class="row">
+      <h1>{{title}} <span class="label label-default">History</span></h1>
+      <h3><small>state on: {{submitted}}</small></h3>
+      <h3><small>edited by: {{author}}</small></h3>
+      <h3><small>reason: {{comment}}</small></h3>
+      <p class="lead">{{#markdown}}{{text}}{{/markdown}}</p>
+    </div>
+  </div>
 </template>

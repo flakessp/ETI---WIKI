@@ -10,14 +10,11 @@
     </div>
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
-        {{#if currentUser}}<li><a href="{{pathFor 'postSubmit'}}">Read</a></li>{{/if}}
+        {{#if currentUser}}<li><a href="{{pathFor 'postSubmit'}}">Add</a></li>{{/if}}
   		</ul>
       <ul class="nav navbar-nav">
-        {{#if currentUser}}<li><a href="{{pathFor 'postSubmit'}}">Edit</a></li>{{/if}}
+        {{#if currentUser}}<li><a href="{{pathFor 'postEdit'}}" >Edit</a></li>{{/if}}
   		</ul>
-		<ul class="nav navbar-nav">
-      {{#if currentUser}}<li><a href="{{pathFor 'postSubmit'}}">View History</a></li>{{/if}}
-		</ul>
     <ul class="nav navbar-nav">
       <li><a href="{{pathFor 'historyList'}}">History</a></li>
     </ul>
