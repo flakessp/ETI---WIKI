@@ -1,9 +1,7 @@
 Template.postEdit.events({
   'submit form': function(e) {
     e.preventDefault();
-
     var currentPostId = this._id;
-    console.log(currentPostId);
     var postProperties = {
       title: $(e.target).find('[name=title]').val(),
       text: $(e.target).find('.epicarea').val()
@@ -12,7 +10,7 @@ Template.postEdit.events({
       title: $(e.target).find('[name=title]').val(),
       text: $(e.target).find('.epicarea').val(),
       comment: $(e.target).find('[name=comment]').val(),
-      id: currentPostId
+      postId: currentPostId
     }
 
     // checking if no changes were made
