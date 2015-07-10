@@ -22,7 +22,7 @@
         {{> loginButtons}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="">Profile</a></li>
+        {{#if currentUser}}<li><a href="/profile">Profile</a></li>{{/if}}
       </ul>
     </div>
   </nav>
